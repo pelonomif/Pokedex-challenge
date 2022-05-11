@@ -42,10 +42,10 @@ function logic() {
     /* --- Part 2 : Creating other DOM Objects --- */
         
         // Create HTML li element here (const pokedexEntry)
-
+        const pokedexEntry = document.createElement("li")
 
         // Give pokedexEntry (li) a new class equal to the "type" property of the pokemon object
-
+        pokedexEntry.classlist.add(newPokemon.type)
 
         // Creating a preview button (using a Template Literal)
         // this code is for an html form that will Google search the name of the pokemon
