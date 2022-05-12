@@ -51,7 +51,7 @@ function logic() {
         // this code is for an html form that will Google search the name of the pokemon
         const previewButton = `
             <form action="http://google.com/search" target="_blank">
-                <input name="q" hidden value="${name}">
+                <input name="q" hidden value="${newPokemon.name}">
                 <input type="submit">
             </form>
         `
@@ -60,13 +60,17 @@ function logic() {
     /* --- Part 3 : Add things into the DOM --- */
 
         // Firstly append pokemonData to the innerHTML of pokedexEntry
-
+        pokedexEntry.appendchild(pokemonData)
 
         // Secondly append the previewButton to innerHTML of pokedexEntry
-
+        pokedexEntry.innerHTML += "previewButton"
 
         // Lastly we will get the ul List element that is meant to contain all pokedex entries
-        // The we will append pokedexEntry to the innerHTML of the pokedexEntries ul element
+        // Then we will append pokedexEntry to the innerHTML of the pokedexEntries ul element
+        let entryPoint = document.getElementById("pokedex-entries");
+
+        entryPoint.appendChild(pokedexEntry)
+
 
 
 /*-----------------------------------------------
