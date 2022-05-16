@@ -25,7 +25,19 @@ function logic() {
 
     /* --- Part 1 : Create pokemon data Object --- */
 
-				// Use If to ensure input validation (ensure input fields are !empty)
+		// Use If to ensure input validation (ensure input fields are !empty)
+        if (name === "") {
+            document.getElementById("wrongName").innerText = "Please enter name of Pokemon"
+        }
+
+        if (type === "") {
+            document.getElementById("wrongType").innerText = "Please enter type of Pokemon"
+        }
+
+        if (name === "") {
+            document.getElementById("wrongRegion").innerText = "Please enter region of Pokemon"
+        }
+
         // Create pokemon object here (const pokemon) using user input Strings
         const newPokemon ={
             name : name,
@@ -45,7 +57,7 @@ function logic() {
         const pokedexEntry = document.createElement("li")
 
         // Give pokedexEntry (li) a new class equal to the "type" property of the pokemon object
-        pokedexEntry.classlist.add(newPokemon.type)
+        pokedexEntry.classList.add(newPokemon.type)
 
         // Creating a preview button (using a Template Literal)
         // this code is for an html form that will Google search the name of the pokemon
@@ -60,10 +72,10 @@ function logic() {
     /* --- Part 3 : Add things into the DOM --- */
 
         // Firstly append pokemonData to the innerHTML of pokedexEntry
-        pokedexEntry.appendchild(pokemonData)
+        pokedexEntry.appendChild(pokemonData)
 
         // Secondly append the previewButton to innerHTML of pokedexEntry
-        pokedexEntry.innerHTML += "previewButton"
+        pokedexEntry.innerHTML += previewButton
 
         // Lastly we will get the ul List element that is meant to contain all pokedex entries
         // Then we will append pokedexEntry to the innerHTML of the pokedexEntries ul element
